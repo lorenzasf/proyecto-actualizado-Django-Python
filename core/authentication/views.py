@@ -1,10 +1,11 @@
 from django.shortcuts import render
 from django.contrib.auth import authenticate
-from rest_framework import generics,status
+from rest_framework import generics,status, serializers
 from rest_framework.response import Response
-from .serializers import RegisterSerializer, UserSerializer
-from .messages.responses_ok import LOGIN_OK 
-from .messages.responses_error import LOGIN_CREDENTIALS_REQUIRED_ERROR, LOGIN_CREDENTIALS_ERROR
+from .models import CustomUser
+from .serializers import UserSerializer, RegisterSerializer
+from .mesagges.responses_ok import LOGIN_OK 
+from .mesagges.responses_error import LOGIN_CREDENTIALS_REQUIRED_ERROR, LOGIN_CREDENTIALS_ERROR
 
 # Create your views here.   
 class UserSerializer(serializers.ModelSerializer):
@@ -30,17 +31,11 @@ class LoginView(generics.GenericAPIView):
             if user is not None:
                return Response({
                "user": UserSerializer(user, context = self.get_serializer_context()).data,
-               "message": "Sesión iniciada correctamente"
-
-            }
-               data_response = {"msg": "OK"}
-               return Response(LOGIN_OK, status=status.HTTP_200_OK)
-
+               "message": "Sesión iniciada correctamente"})
             else: 
-                
                 return Response(LOGIN_CREDENTIALS_ERROR, status=status.HTTP_401_UNAUTHORIZED)
 
-class SignUpView(generics.GenericaAPIView):
+class SignUpView(generics.GenericAPIView):
     
     serializer_class = RegisterSerializer
     def post(self, request):

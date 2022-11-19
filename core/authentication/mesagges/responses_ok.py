@@ -1,1 +1,1 @@
-LOGIN_OK = {msg:"Sesión iniciada correctamente"}
+LOGIN_OK = {"msg":"Sesión iniciada correctamente"}
