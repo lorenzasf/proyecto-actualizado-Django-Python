@@ -1,11 +1,10 @@
-<<<<<<< HEAD
 # from rest_framework.serializers import ModelSerializer
 # from .models import Task
 
 # class TaskSerializer(ModelSerializer):
 #     class Meta:
 #         model = Task
-        # fields = '__all__'
+#        fields = '__all__'
 
 from rest_framework import serializers
 from .models import Task
@@ -29,12 +28,3 @@ class TaskSerializer(serializers.ModelSerializer):
             "priority_id": Task.priority.pk,
             "priority_name": Task.priority.name
         }
-=======
-from rest_framework.serializers import ModelSerializer
-from .models import Task
-
-class TaskSerializer(ModelSerializer):
-    class Meta:
-        model = Task
-        fields = '__all__'
->>>>>>> d8c2f76c084e8a49f5f598379d3c7602a1931f13
