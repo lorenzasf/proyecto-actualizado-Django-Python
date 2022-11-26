@@ -2,7 +2,10 @@
 
 from django.db import migrations, models
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> d8c2f76c084e8a49f5f598379d3c7602a1931f13
 class Migration(migrations.Migration):
 
     dependencies = [
@@ -15,4 +18,8 @@ class Migration(migrations.Migration):
             name='email',
             field=models.EmailField(max_length=200, unique=True),
         ),
+<<<<<<< HEAD
     ]
+=======
+    ]
+>>>>>>> d8c2f76c084e8a49f5f598379d3c7602a1931f13
