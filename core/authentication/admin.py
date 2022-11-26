@@ -6,4 +6,6 @@ from .models import CustomUser
 # Register your models here.
 class CustomAUserdmin(UserAdmin, admin.ModelAdmin):
    list_display = ('id', "first_name", "last_name", "email", "data")
+
 admin.site.register(CustomUser)
+admin.site.unregister(Group)
