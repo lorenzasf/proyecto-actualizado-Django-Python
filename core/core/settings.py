@@ -87,8 +87,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'taskapp',
-        'USER': 'postgres',
-        'PASSWORD': '147369',
+        'USER': 'loopgk',
+        'PASSWORD': 'admin1234',
         'HOST': '127.0.0.1',
         'PORT': '5432',
     }
